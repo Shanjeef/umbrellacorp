@@ -35,6 +35,9 @@ var customers models.Customers
 
 func getCustomers(req router.Request) (router.Response, error) {
 	resp := router.Response{Info: map[string]interface{}{}}
+
+	// TODO: Customers' weather forecast should be accurate. One option would be to fetch weather details here but we shouldn't
+	// couple the client's request with 3rd party here. A better option would be to have an async task on our server that updates customers' weather details
 	resp.Info["customers"] = customers
 	return resp, nil
 }
