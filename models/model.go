@@ -13,6 +13,7 @@ type Customer struct {
 	Contact        string    `json:"contact"` // optional field
 	ContactNumber  string    `json:"contact_number" api:"required"`
 	Address        Address   `json:"address" api:"required"`
+	NumEmployees   int       `json:"num_employees" api_required`
 	WeatherDetails []Weather `json:"weather"`
 }
 

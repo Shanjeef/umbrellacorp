@@ -65,6 +65,8 @@ func RegisterRoutes(entity string, routes Routes) error {
 	return nil
 }
 
+// handle decorates our HandlerFunc with http.HandlerFunc so that we may centralize reading request body details and send results back
+// to the client
 func handle(handlerFn HandlerFunc) http.Handler {
 	return http.HandlerFunc(func(w http.ResponseWriter, req *http.Request) {
 		w.Header().Set("Content-Type", "application/json; charset=UTF-8")
